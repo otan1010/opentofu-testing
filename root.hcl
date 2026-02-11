@@ -13,8 +13,8 @@ locals {
 
   # Extract the variables we need for easy access
   subscription_name = local.subscription_vars.locals.subscription_name
-  subscription_id   = local.subscription_vars.locals.aws_subscription_id
-  az_region   = local.region_vars.locals.az_region
+  subscription_id   = local.subscription_vars.locals.azure_subscription_id
+  azure_region   = local.region_vars.locals.azure_region
 }
 
 # Generate an AZ provider block
@@ -34,9 +34,9 @@ EOF
 #  backend = "s3"
 #  config = {
 #    encrypt        = true
-#    bucket         = "${get_env("TG_BUCKET_PREFIX", "")}terragrunt-example-tf-state-${local.subscription_name}-${local.az_region}"
+#    bucket         = "${get_env("TG_BUCKET_PREFIX", "")}terragrunt-example-tf-state-${local.subscription_name}-${local.azure_region}"
 #    key            = "${path_relative_to_include()}/tf.tfstate"
-#    region         = local.az_region
+#    region         = local.azure_region
 #    dynamodb_table = "tf-locks"
 #  }
 #  generate = {
@@ -49,7 +49,7 @@ EOF
 #catalog {
 #  urls = [
 #    "https://github.com/gruntwork-io/terragrunt-infrastructure-catalog-example",
-#    "https://github.com/gruntwork-io/terraform-aws-utilities",
+#    "https://github.com/gruntwork-io/terraform-azure-utilities",
 #    "https://github.com/gruntwork-io/terraform-kubernetes-namespace"
 #  ]
 #}
