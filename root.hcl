@@ -18,7 +18,7 @@ generate "provider" {
   contents  = <<EOF
 provider "azurerm" {
   features {}
-  subscription_id = ["${local.subscription_id}"]
+  subscription_id = "${local.subscription_id}"
 }
 EOF
 }
