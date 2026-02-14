@@ -1,6 +1,6 @@
 locals {
-  resourcegroup_vars = read_terragrunt_config(find_in_parent_folders("resourcegroup.hcl"))
-  path = local.resourcegroup_vars.locals.azure_resourcegroup_name
+  resource_group_vars = read_terragrunt_config(find_in_parent_folders("resource_group.hcl"))
+  path = local.resource_group_vars.locals.azure_resource_group_name
 }
 
 unit "resource_group" {
