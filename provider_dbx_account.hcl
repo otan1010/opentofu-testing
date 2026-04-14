@@ -9,8 +9,9 @@ generate "dbx_account_provider" {
   if_exists = "overwrite_terragrunt"
   contents  = <<EOF
 provider "databricks" {
-  profile = "andreas.ottosson_tutamail.com#ext#@andreasottossontutamail.onmicrosoft.com"
+  profile = "DEFAULT"
   account_id = "${local.databricks_account_id}"
+  host = "https://accounts.azuredatabricks.net"
 }
 EOF
 }
