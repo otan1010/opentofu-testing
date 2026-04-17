@@ -10,7 +10,6 @@ generate "az_provider" {
   contents  = <<EOF
 provider "azurerm" {
   features {}
-  subscription_id = "${local.subscription_id}"
 }
 EOF
 }
