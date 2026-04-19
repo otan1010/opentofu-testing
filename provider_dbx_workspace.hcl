@@ -5,8 +5,8 @@ generate "dbx_workspace_provider" {
   contents  = <<EOF
 provider "databricks" {
   alias = "workspace_level"
-  profile = "DEFAULT"
   host = azurerm_databricks_workspace.this.workspace_url
+  azure_workspace_resource_id = azurerm_databricks_workspace.this.id
 }
 EOF
 }
